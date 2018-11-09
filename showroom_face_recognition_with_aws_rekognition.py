@@ -1,8 +1,8 @@
 import boto3
 from botocore.exceptions import ClientError
 
-bucket = "bucket_faces_smeup"
-collectionId = "FacesCollection"
+bucket = "bucket
+collectionId = "collection"
 maxResults = 2
 
 #Crea collezione
@@ -75,7 +75,7 @@ def listing_faces():
         else:
             tokens = False
 
-#Elimina acce
+#Elimina facce
 def delete_face():
     faces = []
     faces.append("456b9f10-e417-407f-abf4-58abf7d31c34")
@@ -123,11 +123,12 @@ def search_face_in_image():
 #main
 if __name__ == '__main__':
     rekognition_client = boto3.client('rekognition')
-    listing_faces()
+    search_face_in_image()
+    
 ###AWS CLI
-#predict windows-->aws rekognition search-faces-by-image --image "S3Object={Bucket=bucket-faces-smeup,Name=immagine.jpg}" --collection-id FacesCollection --region eu-west-1
+#predict windows-->aws rekognition search-faces-by-image --image "S3Object={Bucket=bucket,Name=immagine.jpg}" --collection-id collection --region eu-west-1
 
-#add image to coll--> aws rekognition index-faces --image "S3Object={Bucket=bucket-faces-smeup,Name=FIOGIA.png}" --collection-id FacesCollection --max-faces 1 --quality-filter AUTO  --detection-attributes ALL --external-image-id FIOGIA --region eu-west-1
+#add image to coll--> aws rekognition index-faces --image "S3Object={Bucket=bucket,Name=immgine-jpg}" --collection-id collection --max-faces 1 --quality-filter AUTO  --detection-attributes ALL --external-image-id FIOGIA --region eu-west-1
 
 #listing faces--> aws rekognition list-faces --collection-id qui_id
 
@@ -142,8 +143,3 @@ if __name__ == '__main__':
 #describing collection--> aws rekognition describe-collection --collection-id qui_id_della_collezione
 
 #delete collection--> aws rekognition delete-collection --collection-id qui
-
-
-
-
-###
