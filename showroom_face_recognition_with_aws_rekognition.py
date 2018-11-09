@@ -1,7 +1,7 @@
 import boto3
 from botocore.exceptions import ClientError
 
-bucket = "bucket
+bucket = "bucket"
 collectionId = "collection"
 maxResults = 2
 
