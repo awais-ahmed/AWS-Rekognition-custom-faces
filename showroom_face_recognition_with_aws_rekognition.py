@@ -78,7 +78,7 @@ def listing_faces():
 #Elimina facce
 def delete_face():
     faces = []
-    faces.append("456b9f10-e417-407f-abf4-58abf7d31c34")
+    faces.append("452b9f10-e437-407f-abf4-58dbf7d31c34") #face id
 
     client = boto3.client('rekognition')
 
